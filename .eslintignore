@@ -5,3 +5,4 @@ vitest.config.ts
 public
 cypress.config.ts
 env.d.ts
+tailwind.config.js
