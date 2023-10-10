@@ -3,10 +3,9 @@ require('@rushstack/eslint-patch/modern-module-resolution')
 
 module.exports = {
   root: true,
-  'extends': [
+  extends: [
     'plugin:vue/vue3-essential',
-    'airbnb-base',
-    'airbnb-typescript/base',
+    '@vue/eslint-config-airbnb-with-typescript',
     'plugin:prettier/recommended'
   ],
   overrides: [
@@ -21,6 +20,6 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 'latest',
-    project: './tsconfig.json'
+    extraFileExtension: [".vue"]
   }
 }
