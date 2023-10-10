@@ -1,0 +1,7 @@
+node_modules
+.prettierrc.cjs
+vite.config.ts
+vitest.config.ts
+public
+cypress.config.ts
+env.d.ts

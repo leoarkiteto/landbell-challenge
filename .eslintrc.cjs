@@ -5,9 +5,9 @@ module.exports = {
   root: true,
   'extends': [
     'plugin:vue/vue3-essential',
-    'eslint:recommended',
-    '@vue/eslint-config-typescript',
-    '@vue/eslint-config-prettier/skip-formatting'
+    'airbnb-base',
+    'airbnb-typescript/base',
+    'plugin:prettier/recommended'
   ],
   overrides: [
     {
@@ -20,6 +20,7 @@ module.exports = {
     }
   ],
   parserOptions: {
-    ecmaVersion: 'latest'
+    ecmaVersion: 'latest',
+    project: './tsconfig.json'
   }
 }
