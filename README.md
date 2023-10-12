@@ -1,25 +1,28 @@
-# vue-challenge
+# Landbell Challenge
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a VueJs challenge provided by LandBell in order to test programming 
+skill and problem-solving abilities 
 
-## Recommended IDE Setup
+## Overview
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+The challenge is to developer a Form builder, which has 2 panels, the right 
+one, is the field to choose in order to create a form (text, select, date, 
+etc), the left one is the form whith all fields chose from the other panel
 
-## Type Support for `.vue` Imports in TS
+## Requirements (Bussiness Rules)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+- To add a field, the user must first choose the field type and then the
+  properties (label, field name, options, etc);
+- When the user clicks on Add Field, it should reflect on the form on the left
+  side and reset the setting on the right side;
+- The form must persist when the user refreshes the page or leaves the page;
+- When clicking submit, log to the console an object of the form, the key being
+  the "Field Name" and the value the user input (output example below);
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+## ScreenShot
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+![](docs/images/formBuilder.gif)
 
 ## Project Setup
 
@@ -39,12 +42,6 @@ pnpm dev
 pnpm build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-pnpm test:unit
-```
-
 ### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
 
 ```sh
@@ -59,10 +56,4 @@ But it's still recommended to test the production build with `test:e2e` before d
 ```sh
 pnpm build
 pnpm test:e2e
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
 ```
