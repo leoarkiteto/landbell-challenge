@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  import { ref } from "vue";
+  import { ref, watch } from "vue";
   import PlusBoxOutline from "vue-material-design-icons/PlusBoxOutline.vue";
 
   import Widget from "@/components/Widget.vue";

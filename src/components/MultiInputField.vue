@@ -13,7 +13,7 @@
 
 <template>
   <label>{{ label }}</label>
-  <div class="flex gap-3">
+  <div class="flex flex-col gap-3 md:flex-row">
     <input
       :name="nameField"
       :type="type"

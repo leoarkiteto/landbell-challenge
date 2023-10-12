@@ -20,7 +20,6 @@
   });
 
   function createDeck(data: Field) {
-    // fieldToDeck.value = [...fieldToDeck.value, data];
     fieldToDeck.value.push(data);
   }
 
@@ -33,7 +32,7 @@
 
 <template>
   <div
-    class="flex h-screen items-center justify-center gap-12 bg-gradient-to-r from-gray-500 to-blue-950 p-8"
+    class="flex min-h-screen flex-col items-center justify-center gap-12 bg-gradient-to-r from-gray-500 to-blue-950 p-8 md:flex-row"
   >
     <FormDeck :fields="fieldToDeck" @clear="clearDeck" />
     <FormBuilder @add-field="createDeck" />

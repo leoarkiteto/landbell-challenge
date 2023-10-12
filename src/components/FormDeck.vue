@@ -8,7 +8,7 @@
   import SelectField from "@/components/SelectField.vue";
   import TextField from "@/components/TextField.vue";
   import { saveStorage, getStorage } from "@/utils/localData";
-  import Empty from "@/data/animation_lnnaks1a.json";
+  import Empty from "@/data/animation_lnndl6of.json";
 
   interface Field {
     label: string;
@@ -39,6 +39,9 @@
     saveStorage("fields", props.fields);
     saveStorage("fieldsData", formData.value);
 
+    if (Object.keys(formData.value).length === 0) {
+      return;
+    }
     console.log({ ...formData.value });
   }
 </script>
@@ -49,8 +52,12 @@
       v-if="!fields.length"
       class="flex h-full flex-col items-center justify-center gap-6"
     >
-      <Vue3Lottie :animation-data="Empty" :height="300" :width="600" />
-      <p class="w-fit rounded-xl bg-gray-300 px-6 py-4">No field added yet!!</p>
+      <div class="md:p-10">
+        <Vue3Lottie :animation-data="Empty" />
+      </div>
+      <p class="w-fit rounded-xl bg-gray-300 px-6 py-4">
+        No field added yet!! Please add your first field
+      </p>
     </div>
     <form
       class="flex flex-1 flex-col justify-between"
@@ -83,7 +90,7 @@
         </template>
       </div>
 
-      <div class="flex justify-end gap-4">
+      <div class="mt-6 flex justify-end gap-4">
         <ButtonItem @click="$emit('clear')">Clear Form</ButtonItem>
         <ButtonItem button-type="submit">Submit</ButtonItem>
       </div>

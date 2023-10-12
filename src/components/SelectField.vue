@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-  import { ref, watch } from "vue";
+  import { ref, watch, watchEffect } from "vue";
 
   const emit = defineEmits(["update:modelValue"]);
-  const { modelValue } = defineProps([
+  const { modelValue, options, defaultText, label } = defineProps([
     "modelValue",
     "options",
     "defaultText",
@@ -11,8 +11,9 @@
 
   const selectedValue = ref(modelValue);
 
-  watch(selectedValue, newValue => {
-    emit("update:modelValue", newValue);
+  watchEffect(() => {
+    console.log(selectedValue.value);
+    emit("update:modelValue", selectedValue.value);
   });
 </script>
 
