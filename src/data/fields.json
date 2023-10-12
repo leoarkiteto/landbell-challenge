@@ -1,0 +1,8 @@
+[
+  { "text": "Text", "value": "text" },
+  { "text": "Password", "value": "password" },
+  { "text": "Text Area", "value": "textarea" },
+  { "text": "Select", "value": "select" },
+  { "text": "Color", "value": "color" },
+  { "text": "Date", "value": "date" }
+]
