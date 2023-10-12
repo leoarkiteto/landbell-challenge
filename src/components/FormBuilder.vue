@@ -78,7 +78,10 @@
         <InputField v-model="fieldNameBuilder" label="Field Name" type="text" />
       </div>
 
-      <div v-show="typeBuilder === 'select'" class="flex flex-col gap-2">
+      <div
+        v-show="typeBuilder === 'select'"
+        class="flex flex-col gap-2 overflow-hidden"
+      >
         <MultiInputField
           v-model:text="textBuilder"
           v-model:value="valueBuilder"
@@ -93,7 +96,7 @@
           Add option
         </button>
 
-        <div class="flex h-[300px] flex-col gap-2 overflow-y-auto">
+        <div class="flex h-[50%] flex-col gap-2 overflow-y-auto">
           <MultiInputField
             v-for="el in optList"
             :key="el.value"
