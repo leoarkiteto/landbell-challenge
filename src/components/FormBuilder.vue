@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-  import { ref, watch } from "vue";
+  import { ref } from "vue";
   import PlusBoxOutline from "vue-material-design-icons/PlusBoxOutline.vue";
 
   import Widget from "@/components/Widget.vue";
   import InputField from "@/components/InputField.vue";
   import ButtonItem from "@/components/ButtonItem.vue";
   import SelectField from "@/components/SelectField.vue";
+  import MultiInputField from "@/components/MultiInputField.vue";
 
   import data from "@/data/fields.json";
-  import MultiInputField from "@/components/MultiInputField.vue";
 
   interface OptList {
     value: string;
@@ -63,12 +63,7 @@
 <template>
   <Widget class="flex-1 justify-between">
     <div class="flex flex-col gap-3">
-      <SelectField
-        v-model="typeBuilder"
-        :options="data"
-        default-text="Choose a input"
-        label="Inputs:"
-      />
+      <SelectField v-model="typeBuilder" :options="data" label="Inputs:" />
 
       <hr class="my-4" />
 
@@ -80,7 +75,7 @@
 
       <div
         v-show="typeBuilder === 'select'"
-        class="flex flex-col gap-2 overflow-hidden"
+        class="flex h-[300px] flex-col gap-2"
       >
         <MultiInputField
           v-model:text="textBuilder"
