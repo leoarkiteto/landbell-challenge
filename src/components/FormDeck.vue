@@ -14,7 +14,7 @@
     label: string;
     name: string;
     type: string;
-    options?: string[];
+    options: { value: string; text: string }[];
   }
   interface FieldProps {
     fields: Field[];
