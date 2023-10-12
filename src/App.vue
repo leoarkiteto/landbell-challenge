@@ -32,7 +32,9 @@
 </script>
 
 <template>
-  <div class="flex h-screen items-center justify-center gap-12 bg-black p-8">
+  <div
+    class="flex h-screen items-center justify-center gap-12 bg-gradient-to-r from-gray-500 to-blue-950 p-8"
+  >
     <FormDeck :fields="fieldToDeck" @clear="clearDeck" />
     <FormBuilder @add-field="createDeck" />
   </div>

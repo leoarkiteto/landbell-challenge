@@ -1,5 +1,6 @@
 <script lang="ts" setup>
   import { onMounted, ref } from "vue";
+  import { Vue3Lottie } from "vue3-lottie";
 
   import Widget from "@/components/Widget.vue";
   import ButtonItem from "@/components/ButtonItem.vue";
@@ -7,6 +8,7 @@
   import SelectField from "@/components/SelectField.vue";
   import TextField from "@/components/TextField.vue";
   import { saveStorage, getStorage } from "@/utils/localData";
+  import Empty from "@/data/animation_lnnaks1a.json";
 
   interface Field {
     label: string;
@@ -43,7 +45,13 @@
 
 <template>
   <Widget class="flex-[2]">
-    <p v-if="!fields.length" class="text-center">No field added yet!!</p>
+    <div
+      v-if="!fields.length"
+      class="flex h-full flex-col items-center justify-center gap-6"
+    >
+      <Vue3Lottie :animation-data="Empty" :height="300" :width="600" />
+      <p class="w-fit rounded-xl bg-gray-300 px-6 py-4">No field added yet!!</p>
+    </div>
     <form
       class="flex flex-1 flex-col justify-between"
       @submit.prevent="submitDeck"
